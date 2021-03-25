@@ -1,36 +1,19 @@
+import React, { useState } from "react";
 import "./App.css";
 
-function Header(props) {
-  return (
-    <header>
-      <h1>{props.name}'s house</h1>
-    </header>
-  );
-}
-
-function Main() {
-  return (
-    <section>
-      <p>We serve the most delicious food around.</p>
-    </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <p>The Night Owl</p>
-    </footer>
-  );
-}
-
 function App() {
+  const [checked, setChecked] = useState(false);
+
   return (
-    <div className="App">
-      <Header name="Tin" />
-      <Main />
-      <Footer />
-    </div>
+    <>
+      <input
+        type="checkbox"
+        value={checked}
+        onChange={() => setChecked((checked) => !checked)}
+      />
+
+      <p>{checked  ? "checked" : "not checked"}</p>
+    </>
   );
 }
 
